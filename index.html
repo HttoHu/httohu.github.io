@@ -217,6 +217,92 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.htto.online/2021/04/29/%E5%9B%A0%E6%95%B0%E5%92%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Htto Hu(胡远韬)">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2021/04/29/%E5%9B%A0%E6%95%B0%E5%92%8C/" class="post-title-link" itemprop="url">因数和</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2021-04-29 12:34:08 / 修改时间：12:40:00" itemprop="dateCreated datePublished" datetime="2021-04-29T12:34:08+08:00">2021-04-29</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E8%AE%BA/" itemprop="url" rel="index"><span itemprop="name">数论</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="CF1512G-题解"><a href="#CF1512G-题解" class="headerlink" title="CF1512G 题解"></a>CF1512G 题解</h3><p>其实这一题重点是要快速处理因子和,我们可以用欧拉筛<br>设因子和的函数是</p>
+<p>$$d(n)=\sum\limits_{k|n}{k}$$</p>
+<p>显然$d(n)$是积性函数有</p>
+<p>$d(n\cdot m)=d(n)d(m),m \perp n$<br>而且如果p是素数有</p>
+<p>$d(p)=p+1$</p>
+<p>一般情况可以在草稿纸上画一画,先将数分解然后推</p>
+<p>$d(n)=(1+p_1^1+p_1^2+…+p_1^{a_1})(1+p_2^1+p_2^2…+p_2^{a_2})…$</p>
+<p>其中$n=\prod\limits_i p_i^{a_i}$</p>
+<p>如果存在一个</p>
+<p>$$p|n,\quad d(np)=(1+p_1^1+p_1^2+…+p_1^{a_1+1})(1+p_2^1+p_2^2…+p_2^{a_2})…$$</p>
+<p>我们发现可以记录第一个素数的等比数列的和(这个素数永远是最小的那个素数,我们可以用欧拉筛处理,这样每次取到的都是最小的素数)</p>
+<p>$sum(np_1)=(1+p_1^1+p_1^2+…+p_1^{a_1+1})$</p>
+<p>$sum(n)=(1+p_1^1+p_1^2+…+p_1^{a_1+1})$</p>
+<p>$d(np)=d(n)/sum(n)\cdot sum(np)$</p>
+<p>如果$p$ 不能整除$n$那么通过积性函数可以算出<br>$$ d(np)=d(n)\cdot d(p) $$<br>下面是代码:这一题要算$d^{-1}(x)$我们只要简单处理一下就好啦.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e7</span> + <span class="number">5</span>;</span><br><span class="line">vector&lt;<span class="keyword">int</span>&gt; pt;</span><br><span class="line"><span class="keyword">bool</span> isnp[maxn];</span><br><span class="line"><span class="keyword">int</span> d[maxn];</span><br><span class="line"><span class="keyword">int</span> sum[maxn];</span><br><span class="line"><span class="keyword">int</span> inv_d[maxn];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">process</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">memset</span>(inv_d, <span class="number">-1</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(inv_d));</span><br><span class="line">    sum[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    d[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; maxn; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (!isnp[i])</span><br><span class="line">        &#123;</span><br><span class="line">            d[i] = i + <span class="number">1</span>;</span><br><span class="line">            sum[i] = i + <span class="number">1</span>;</span><br><span class="line">            pt.<span class="built_in">push_back</span>(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> p : pt)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (p * i &gt;= maxn)</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            isnp[p * i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % p != <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                sum[i * p] = p + <span class="number">1</span>;</span><br><span class="line">                d[i * p] = d[i] * (p + <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                sum[i * p] = sum[i] * p + <span class="number">1</span>;</span><br><span class="line">                d[i * p] = d[i] / sum[i] * sum[i * p];</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; maxn; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (d[i] &lt; maxn)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (inv_d[d[i]] != <span class="number">-1</span>)</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            inv_d[d[i]] = i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">process</span>();</span><br><span class="line">    <span class="keyword">int</span> kase;</span><br><span class="line">    cin &gt;&gt; kase;</span><br><span class="line">    <span class="keyword">while</span> (kase--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> n;</span><br><span class="line">        cin &gt;&gt; n;</span><br><span class="line">        cout &lt;&lt; inv_d[n] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.htto.online/2021/04/27/CF1516C%E9%A2%98%E8%A7%A3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -242,7 +328,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-27 19:48:55 / 修改时间：19:49:57" itemprop="dateCreated datePublished" datetime="2021-04-27T19:48:55+08:00">2021-04-27</time>
+              <time title="创建时间：2021-04-27 19:48:55 / 修改时间：19:51:45" itemprop="dateCreated datePublished" datetime="2021-04-27T19:48:55+08:00">2021-04-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,8 +361,8 @@
       
           <p><a target="_blank" rel="noopener" href="https://codeforces.com/contest/1516/problem/C">题目传送门</a></p>
 <h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给你一个长度为n的数组，如果没有方法将数组划分为两个元素和相同的子数组我们称为好数组。现在他想删除一些元素使整个数组变为好数组。请问最少需要删除多少个.并且打印删除的元素的下标 </p>
-<p>$2\le n le 100$</p>
-<p>$1\le a_i\le2000$</p>
+<p>$2\le n \le 100$</p>
+<p>$1\le a_i \le {2000}$</p>
 <p>样例</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">6 3 9 12</span><br><span class="line"></span><br><span class="line">1</span><br><span class="line">2</span><br></pre></td></tr></table></figure>
 <p>容易证明我们最多只要删一个数就能构造出好数组，具体如下。</p>
@@ -328,7 +414,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-27 16:24:20 / 修改时间：18:54:26" itemprop="dateCreated datePublished" datetime="2021-04-27T16:24:20+08:00">2021-04-27</time>
+              <time title="创建时间：2021-04-27 16:24:20 / 修改时间：19:56:25" itemprop="dateCreated datePublished" datetime="2021-04-27T16:24:20+08:00">2021-04-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -344,7 +430,7 @@
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E4%BA%8C%E5%8F%89%E6%A0%91/" itemprop="url" rel="index"><span itemprop="name">二叉树</span></a>
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
                 </span>
             </span>
 
@@ -410,7 +496,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2021-04-27 16:19:53 / 修改时间：18:54:59" itemprop="dateCreated datePublished" datetime="2021-04-27T16:19:53+08:00">2021-04-27</time>
+              <time title="创建时间：2021-04-27 16:19:53 / 修改时间：19:56:14" itemprop="dateCreated datePublished" datetime="2021-04-27T16:19:53+08:00">2021-04-27</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -423,6 +509,10 @@
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E7%AE%97%E6%B3%95/DP/" itemprop="url" rel="index"><span itemprop="name">DP</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/DP/%E9%A2%98%E8%A7%A3/" itemprop="url" rel="index"><span itemprop="name">题解</span></a>
                 </span>
             </span>
 
@@ -534,14 +624,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
