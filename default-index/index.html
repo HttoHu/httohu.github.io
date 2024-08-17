@@ -1,0 +1,1579 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<!-- 导入jquery -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Htto的小站">
+<meta property="og:url" content="http://example.com/default-index/index.html">
+<meta property="og:site_name" content="Htto的小站">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Htto">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/default-index/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Htto的小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Htto的小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/22/compiler/opt-lazy-code-motion/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/22/compiler/opt-lazy-code-motion/" class="post-title-link" itemprop="url">optimal code motion</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-06-22 10:00:00" itemprop="dateCreated datePublished" datetime="2024-06-22T10:00:00+08:00">2024-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-23 11:48:38" itemprop="dateModified" datetime="2024-06-23T11:48:38+08:00">2024-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/%E4%B8%AD%E7%AB%AF%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">中端优化</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>读一篇 1994 年 PLDI 上发表的经典论文，Optimal Code Motion: Theory and Practice，作者是 Jens Knoop, Oliver Ruthing, Bernhard Steffen. 总结介绍了 CM 的基本理论以及实现。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/21/compiler/llvm-ir-01-mem2reg/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/04/21/compiler/llvm-ir-01-mem2reg/" class="post-title-link" itemprop="url">llvm-mem2reg</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-04-21 10:00:00" itemprop="dateCreated datePublished" datetime="2024-04-21T10:00:00+08:00">2024-04-21</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/LLVM/" itemprop="url" rel="index"><span itemprop="name">LLVM</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="mem2reg">1. Mem2Reg</h1>
+<p>mem2reg 主要将 llvm 中的 alloc, load, store 消除，将 LLVM IR
+转换为纯的 SSA 形式IR，例如，对于如下代码：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">foo</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(x &lt; <span class="number">10</span>)</span><br><span class="line">		<span class="keyword">return</span> <span class="number">3</span>*x;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">		<span class="keyword">return</span> <span class="number">4</span>*y;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行：<code>clang -S -c -Xclang -disable-O0-optnone -fno-discard-value-names -emit-llvm  case1.c -o case1.ll</code>
+可以得到如下 IR</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">define dso_local signext i32 @foo(i32 noundef signext %x, i32 noundef signext %y) #0 &#123;</span><br><span class="line">entry:</span><br><span class="line">  %retval = alloca i32, align 4</span><br><span class="line">  %x.addr = alloca i32, align 4</span><br><span class="line">  %y.addr = alloca i32, align 4</span><br><span class="line">  store i32 %x, ptr %x.addr, align 4</span><br><span class="line">  store i32 %y, ptr %y.addr, align 4</span><br><span class="line">  %0 = load i32, ptr %x.addr, align 4</span><br><span class="line">  %cmp = icmp slt i32 %0, 10</span><br><span class="line">  br i1 %cmp, label %if.then, label %if.else</span><br><span class="line"></span><br><span class="line">if.then:                                          ; preds = %entry</span><br><span class="line">  %1 = load i32, ptr %x.addr, align 4</span><br><span class="line">  %mul = mul nsw i32 3, %1</span><br><span class="line">  store i32 %mul, ptr %retval, align 4</span><br><span class="line">  br label %return</span><br><span class="line"></span><br><span class="line">if.else:                                          ; preds = %entry</span><br><span class="line">  %2 = load i32, ptr %y.addr, align 4</span><br><span class="line">  %mul1 = mul nsw i32 4, %2</span><br><span class="line">  store i32 %mul1, ptr %retval, align 4</span><br><span class="line">  br label %return</span><br><span class="line"></span><br><span class="line">return:                                           ; preds = %if.else, %if.then</span><br><span class="line">  %3 = load i32, ptr %retval, align 4</span><br><span class="line">  ret i32 %3</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>opt -passes=mem2reg case1.ll -o case1.opt.ll</code>
+将改IR转换为 SSA 形式</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">define dso_local signext i32 @foo(i32 noundef signext %x, i32 noundef signext %y) #0 &#123;</span><br><span class="line">entry:</span><br><span class="line">  %cmp = icmp slt i32 %x, 10</span><br><span class="line">  br i1 %cmp, label %if.then, label %if.else</span><br><span class="line"></span><br><span class="line">if.then:                                          ; preds = %entry</span><br><span class="line">  %mul = mul nsw i32 3, %x</span><br><span class="line">  br label %return</span><br><span class="line"></span><br><span class="line">if.else:                                          ; preds = %entry</span><br><span class="line">  %mul1 = mul nsw i32 4, %y</span><br><span class="line">  br label %return</span><br><span class="line"></span><br><span class="line">return:                                           ; preds = %if.else, %if.then</span><br><span class="line">  %retval.0 = phi i32 [ %mul, %if.then ], [ %mul1, %if.else ]</span><br><span class="line">  ret i32 %retval.0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到 load,store,alloc 命令全部消除了。</p>
+<p>LLVM 实现 mem2reg 的 pass 主要是
+PromotePass（/llvm-project/llvm/lib/Transforms/Utils/MemoryOpRemark.cpp），分析这个
+Pass 的 run，可以发现，首先它收集了所有的 AllocaInst，然后调用
+PromoteMemToReg将 Alloc和相关的 Store，Load替换掉，直到 Alloca
+集合收敛到空，这个 Pass 在执行 PromoteMemToReg
+前还做了支配树分析和AssumptionCache，支配树分析很容易理解，因为后面计算
+IDF 的时候需要用到支配树， AssumptionCache 这里不做讨论。</p>
+<h2 id="promotemem2reg">1.1 PromoteMem2Reg</h2>
+<h3 id="llvm-基本优化">1.1.1 LLVM 基本优化</h3>
+<p>路径：llvm/lib/Transforms/Utils/PromoteMemoryToRegister.cpp</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">PromoteMem2Reg::run</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>这是 PromoteMem2Reg 类的方法，这个类接受了 Allocas
+和支配树，然后对他们进行处理。这里我们不关注 Debug 的一些细节。</p>
+<p>首先它遍历每个 AllocaInst，检测这个 AllocaInst 是否可以被优化</p>
+<ul>
+<li>比如，如果这个 AllocaInst 没有被使用，直接删除即可</li>
+<li>如果这个 AllocaInst 只在一个 BasicBlock 中被定义（store
+命令只出现在一个 BB），那么可以遍历支配树，替换支配节点的所有 load 为
+store的值就行了，具体见 rewriteSingleStoreAlloca 这个函数。</li>
+<li>如果 Def 和 Use 都在一个 BasicBlock，执行一趟扫描，见
+promoteSingleBlockAlloca</li>
+</ul>
+<p>后面就是针对一般情况，一个 AllocaInst 在多个 BasicBlock 被
+store，load。</p>
+<p>首先给每个 BasicBlock 编号，然后计算哪些 BasicBlock
+是存活的，即可以被插入 Phi Node的（见ComputeLiveInBlocks)</p>
+<ul>
+<li>如果一个BasicBlock 在使用 AI 之前就 Store了，那么这个 BasicBlock
+前就不可能被插入 Phi，所以可以认为它不活跃。</li>
+</ul>
+<h3 id="df-计算算法">1.1.2 DF 计算算法</h3>
+<p>下面就是 IDF 的计算了，IDF 的计算大体遵循论文中的方法 (A Linear Time
+Algorithm for Placing-Phi-Nodes 1995) 1. 首先定义 D Edge 和 J Edge * D
+Edge: Domniator Edge，支配边，支配树上的边 * J Edge 就是 CFG
+上无支配关系的边。有个性质就是 对于 J edge 的一条边 <span
+class="math inline">\(u\rightarrow v,level_u \ge level_v\)</span>
+，简单来说就是不能往下跳，不然<span class="math inline">\(u\)</span>
+的父节点就不能支配 <span class="math inline">\(u\)</span> 了。 2.
+给每个节点分配一个 level，即该节点在支配树上的深度，如果要计算一个节点
+<span class="math inline">\(u\)</span>
+的支配边界，可以想到对于任意一个节点 <span class="math inline">\(v\in
+\mathrm{SubDomTree}(u)\)</span> ，如果一个J Edge， <span
+class="math inline">\(v\rightarrow z\)</span> 满足 <span
+class="math inline">\(level_z \le level_u\)</span> 那么 <span
+class="math inline">\(z \in DF(u)\)</span> ，根据DF 的定义，借助DJ Graph
+很显然有这样的结论。</p>
+<h3 id="idf-计算">1.1.3 IDF 计算</h3>
+<p>由于我们的 Def 即Store 指令可能存在于多个
+BasicBlock，所以要计算一个集合的 <span
+class="math inline">\(DF\)</span>，即<span
+class="math inline">\(DF(S)=\bigcup\limits_{b\in
+S}DF(b)\)</span>，但是这些 <span class="math inline">\(DF(S)\)</span>
+里的节点还可能继续传播我们的 <span
+class="math inline">\(DF\)</span>，所以我们需要引入 <span
+class="math inline">\(\mathrm{IDF}\)</span>，即不停的计算 <span
+class="math inline">\(IDF(S)=DF(S\cup DF(S\cup DF(S...))\)</span>
+直到达到一个不动点，我们可以用不动点算法，但是这样时间复杂度太高了。于是这个论文给出了一些优化方法</p>
+<p>考虑一个节点 <span class="math inline">\(u\)</span> ，<span
+class="math inline">\(v \in SubDomTree(u)\)</span> ，如果我们算出了
+<span class="math inline">\(DF(v)\)</span> 那么计算 <span
+class="math inline">\(DF(u)\)</span> 遍历 <span
+class="math inline">\(u\)</span> 子树遇到节点 <span
+class="math inline">\(v\)</span> 可以立即退出，因为 <span
+class="math inline">\(v\)</span> 即其子节点的 <span
+class="math inline">\(DF\)</span> 贡献一定是 <span
+class="math inline">\(DF(v)\)</span> 的子集，对于 <span
+class="math inline">\(z \in DF(v)\)</span>，要满足 <span
+class="math inline">\(level_z \le v\)</span> 的难度一定小于 <span
+class="math inline">\(level_z \le level_u\)</span>，因为 <span
+class="math inline">\(level_u \lt level_v\)</span></p>
+<p>那我们 <span class="math inline">\(O(n)\)</span>
+的算法就非常简单了，用一个优先队列，每次优先计算 level
+大的节点（当然原文用的 PiggyBank 数据结构，总之思想就是 level
+从大到小计算）。下面我们看 LLVM 是如何实现的。</p>
+<h3 id="llvm-实现思路">1.1.4 LLVM 实现思路</h3>
+<p>见：<code>llvm/include/llvm/Support/GenericIteratedDominanceFrontier.h</code></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">class</span> <span class="title class_">NodeTy</span>, <span class="type">bool</span> IsPostDom&gt;</span><br><span class="line"><span class="type">void</span> IDFCalculatorBase&lt;NodeTy, IsPostDom&gt;::<span class="built_in">calculate</span>(SmallVectorImpl&lt;NodeTy *&gt; &amp;IDFBlocks) </span><br></pre></td></tr></table></figure>
+<p>首先，LLVM 先将所有定义的点加入到有个优先队列里面</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// PQ 是个优先队列，而且它的比较对象是一个 pair&lt;int,int&gt; ，first 是 level，second 是 DFS 序</span></span><br><span class="line"><span class="keyword">using</span> DomTreeNodePair =</span><br><span class="line">      std::pair&lt;DomTreeNodeBase&lt;NodeTy&gt; *, std::pair&lt;<span class="type">unsigned</span>, <span class="type">unsigned</span>&gt;&gt;;</span><br><span class="line"><span class="keyword">using</span> IDFPriorityQueue =</span><br><span class="line">      std::priority_queue&lt;DomTreeNodePair, SmallVector&lt;DomTreeNodePair, <span class="number">32</span>&gt;,less_second&gt;;</span><br><span class="line"></span><br><span class="line">IDFPriorityQueue PQ;</span><br><span class="line"><span class="keyword">for</span> (NodeTy *BB : *DefBlocks)</span><br><span class="line">    <span class="keyword">if</span> (DomTreeNodeBase&lt;NodeTy&gt; *Node = DT.<span class="built_in">getNode</span>(BB)) &#123;</span><br><span class="line">      PQ.<span class="built_in">push</span>(&#123;Node, std::<span class="built_in">make_pair</span>(Node-&gt;<span class="built_in">getLevel</span>(), Node-&gt;<span class="built_in">getDFSNumIn</span>())&#125;);</span><br><span class="line">      VisitedWorklist.<span class="built_in">insert</span>(Node);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>后面借助优先队列实现的 worklist
+算法，每拿出一个节点，我们要考虑它的子树上的孩子，所以这里面还套了一个worklist
+不过很好理解，由于每次我们加入的元素 level 一定小于当前的
+level，每个节点的访问次数不超过 <span class="math inline">\(2\)</span>
+次（一次是优先队列访问，一次是父节点扫描孩子时访问），所以最终时间复杂度是
+<span class="math inline">\(O(n \;\log n)\)</span>, 后面的 <span
+class="math inline">\(\log\)</span> 取决于使用的数据结构。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (!PQ.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">  DomTreeNodePair RootPair = PQ.<span class="built_in">top</span>();</span><br><span class="line">  PQ.<span class="built_in">pop</span>();</span><br><span class="line">  DomTreeNodeBase&lt;NodeTy&gt; *Root = RootPair.first;</span><br><span class="line">  <span class="type">unsigned</span> RootLevel = RootPair.second.first;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// Walk all dominator tree children of Root, inspecting their CFG edges with</span></span><br><span class="line">  <span class="comment">// targets elsewhere on the dominator tree. Only targets whose level is at</span></span><br><span class="line">  <span class="comment">// most Root&#x27;s level are added to the iterated dominance frontier of the</span></span><br><span class="line">  <span class="comment">// definition set.</span></span><br><span class="line"></span><br><span class="line">  <span class="built_in">assert</span>(Worklist.<span class="built_in">empty</span>());</span><br><span class="line">  Worklist.<span class="built_in">push_back</span>(Root);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> (!Worklist.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">    DomTreeNodeBase&lt;NodeTy&gt; *Node = Worklist.<span class="built_in">pop_back_val</span>();</span><br><span class="line">    NodeTy *BB = Node-&gt;<span class="built_in">getBlock</span>();</span><br><span class="line">    <span class="comment">// Succ is the successor in the direction we are calculating IDF, so it is</span></span><br><span class="line">    <span class="comment">// successor for IDF, and predecessor for Reverse IDF.</span></span><br><span class="line">    <span class="keyword">auto</span> DoWork = [&amp;](NodeTy *Succ) &#123;</span><br><span class="line">      DomTreeNodeBase&lt;NodeTy&gt; *SuccNode = DT.<span class="built_in">getNode</span>(Succ);</span><br><span class="line"></span><br><span class="line">      <span class="type">const</span> <span class="type">unsigned</span> SuccLevel = SuccNode-&gt;<span class="built_in">getLevel</span>();</span><br><span class="line">      <span class="keyword">if</span> (SuccLevel &gt; RootLevel)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (!VisitedPQ.<span class="built_in">insert</span>(SuccNode).second)</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      NodeTy *SuccBB = SuccNode-&gt;<span class="built_in">getBlock</span>();</span><br><span class="line">      <span class="keyword">if</span> (useLiveIn &amp;&amp; !LiveInBlocks-&gt;<span class="built_in">count</span>(SuccBB))</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">      IDFBlocks.<span class="built_in">emplace_back</span>(SuccBB);</span><br><span class="line">      <span class="keyword">if</span> (!DefBlocks-&gt;<span class="built_in">count</span>(SuccBB))</span><br><span class="line">        PQ.<span class="built_in">push</span>(std::<span class="built_in">make_pair</span>(</span><br><span class="line">            SuccNode, std::<span class="built_in">make_pair</span>(SuccLevel, SuccNode-&gt;<span class="built_in">getDFSNumIn</span>())));</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> *Succ : ChildrenGetter.<span class="built_in">get</span>(BB))</span><br><span class="line">      <span class="built_in">DoWork</span>(Succ);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> DomChild : *Node) &#123;</span><br><span class="line">      <span class="keyword">if</span> (VisitedWorklist.<span class="built_in">insert</span>(DomChild).second)</span><br><span class="line">        Worklist.<span class="built_in">push_back</span>(DomChild);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/24/compiler/llvm-pass-0-%E7%9B%AE%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/24/compiler/llvm-pass-0-%E7%9B%AE%E5%BD%95/" class="post-title-link" itemprop="url">Pass入门目录</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-24 10:00:00" itemprop="dateCreated datePublished" datetime="2023-04-24T10:00:00+08:00">2023-04-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/LLVM/" itemprop="url" rel="index"><span itemprop="name">LLVM</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="目录">目录</h2>
+<ul>
+<li><a href="/2023/04/20/compiler/llvm-pass%E5%85%A5%E9%97%A8/" title="Pass入门（一）Pass 入门">Pass入门（一）Pass 入门</a></li>
+<li><a href="/2023/04/24/compiler/llvm-pass-2-%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%87%8F/" title="Pass入门（二）强度削减">Pass入门（二）强度削减</a></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/24/compiler/llvm-pass-2-%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/24/compiler/llvm-pass-2-%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%87%8F/" class="post-title-link" itemprop="url">Pass入门（二）强度削减</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-24 10:00:00" itemprop="dateCreated datePublished" datetime="2023-04-24T10:00:00+08:00">2023-04-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/LLVM/" itemprop="url" rel="index"><span itemprop="name">LLVM</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><a
+target="_blank" rel="noopener" href="https://github.com/huyuantao-ultrarisc/strength-reduction">Github</a></p>
+<p>循环往往耗时比较高，如果我们能将循环中的一些指令替换为代价较低的指令那么收益会很大。比如下面一个例子。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> j=i*<span class="number">3</span><span class="number">-2</span>;</span><br><span class="line">        sum+=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个例子中计算 <span class="math inline">\(j\)</span>
+用到了一个减法指令和一个乘法指令。乘法指令往往代价较高，其实我们不难发现，因为每次循环
+<span class="math inline">\(i\)</span> 总是加1，<span
+class="math inline">\(j\)</span> 的值每轮循环都会加 <span
+class="math inline">\(3\)</span>，我们其实可以将其替换为。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">-2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=j;</span><br><span class="line">        j+=<span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样一个乘法加上一个减法指令就被替换为了加法指令理论上性能就可以得到不错的提升。</p>
+<p>为了实现上述优化，首先我们需要找到该循环的归纳变量(induction
+variable)，即存在一个正的或负的常数 <span
+class="math inline">\(c\)</span> 使得每次 <span
+class="math inline">\(x\)</span> 赋值时他的值总是增加 <span
+class="math inline">\(c\)</span>，那么 <span
+class="math inline">\(x\)</span> 就称为“归纳变量(induction
+variable)”。本例中 <span class="math inline">\(i\)</span>
+是一个很明显的归纳变量，<span class="math inline">\(j\)</span>
+也是归纳变量。</p>
+<p>为了实现这个优化，首先我们先使用 mem2reg 将部分 load 和 store 替换为
+phi 指令。使用如下命令编译（llvm-14）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clang -emit-llvm -S -Xclang -disable-O0-optnone -fno-discard-value-names main.c -o main.ll</span><br><span class="line">opt -S --mem2reg main.ll -o main.ll</span><br></pre></td></tr></table></figure>
+<p>得到的 llvm ir为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">define dso_local i32 @main() #0 &#123;</span><br><span class="line">entry:</span><br><span class="line">  br label %for.cond</span><br><span class="line"></span><br><span class="line">for.cond:                                         ; preds = %for.inc, %entry</span><br><span class="line">  %sum.0 = phi i32 [ 0, %entry ], [ %add, %for.inc ]</span><br><span class="line">  %i.0 = phi i32 [ 0, %entry ], [ %inc, %for.inc ]</span><br><span class="line">  %cmp = icmp slt i32 %i.0, 100</span><br><span class="line">  br i1 %cmp, label %for.body, label %for.end</span><br><span class="line"></span><br><span class="line">for.body:                                         ; preds = %for.cond</span><br><span class="line">  %mul = mul nsw i32 %i.0, 3</span><br><span class="line">  %sub = sub nsw i32 %mul, 2</span><br><span class="line">  %add = add nsw i32 %sum.0, %sub</span><br><span class="line">  br label %for.inc</span><br><span class="line"></span><br><span class="line">for.inc:                                          ; preds = %for.body</span><br><span class="line">  %inc = add nsw i32 %i.0, 1</span><br><span class="line">  br label %for.cond, !llvm.loop !6</span><br><span class="line"></span><br><span class="line">for.end:                                          ; preds = %for.cond</span><br><span class="line">  ret i32 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们专心编写我们的 pass 。</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="algorithm">Algorithm</h3>
+<ol type="1">
+<li><p>计算所有 induction variable （见 skeleton.cpp 下
+<code>void getIndVarTab(Loop *loop)</code>） 对于每个induction variable
+我们有以下属性</p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">InductionInfo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 依赖的 祖先（注意不一定是直接parent，而是追溯到最上面的parent）</span></span><br><span class="line">    Value *par = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="comment">// 要转变后的induction variable每步增量</span></span><br><span class="line">    optional&lt;<span class="type">int</span>&gt; step;</span><br><span class="line">    <span class="comment">// induction variable 初始值</span></span><br><span class="line">    optional&lt;<span class="type">int</span>&gt; init;</span><br><span class="line">    <span class="comment">// 是否是Phi node</span></span><br><span class="line">    <span class="type">bool</span> is_phi = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 相对 par 的</span></span><br><span class="line">    <span class="type">int</span> parent_factor = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 相对 par 的位移</span></span><br><span class="line">    <span class="type">int</span> parent_dif = <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>每个induction varaible 都有一个par属性，它代表依赖的induction
+variable，如果是phi结点，那么依赖的induction variable 就会是 phi
+节点的某个非常数的 incoming 部分。我们的目的是计算出 step和
+init，然后就可以在循环的header 插入每个induction variable 的 phi
+结点，然后再在循环body的尾变添加step 指令。比如 (伪IR) 我们分析出</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loop_header:</span><br><span class="line">  tmp = phi [INIT,entry] [tmp2,body]</span><br><span class="line">  ...</span><br><span class="line">body:</span><br><span class="line">  tmp2 = tmp + STEP</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure></p>
+<p>起初 loop_header 中出现的 phi 结点都加入到 ind_tab
+中作为可疑的induction variable。然后遍历整个循环的所有指令，如果一个
+BinaryOperator 满足以下条件我们就将它加入到ind_tab 来作为可疑的induction
+variable</p>
+<ul>
+<li>其中一个操作数是常数，另一个操作数是 induction
+variable（称其为依赖的归纳变量）。</li>
+<li>操作符为 +, - , *</li>
+</ul>
+<p>遇到这样的 BinaryOperator
+我们首先将依赖归纳变量的par作为自己的par（如果依赖的的归纳变量是phi结点，那么我们直接将这个
+phi 结点作为自己的par），并且计算相对这个 par
+的乘积和偏移。（减法需要注意依赖的归纳变量的位置，如果归纳变量在右边例如
+<code>j=5-i</code> 我们要看作 <code>j = -1*i + 5</code> 。j 的属性
+parent_diff 和parent_factor 与 i 相比较先取相反数然后 parent_diff
+再加上5，详见代码实现）</p>
+<p>如果这条指令没有加入到 ind_tab 中，我们需要将其加入到 rm_values
+中，计算完 ind_tab 后我们需要检查是否有归纳变量依赖 rm_values
+中的值，如果依赖我们将其从 ind_tab
+中删除。这样我们跑一个不动点算法将所有不符合条件的归纳变量删除。</p></li>
+<li><p>计算 init 和 step 找到所有的潜在归纳变量且计算了它相对 par
+的倍数和 diff，我们就可以计算 它的 init 和 step 了，phi 结点的 init
+我们都计算出来了，他已经再 phi 中显示声明了。phi 的 step
+我们却还没有计算，phi 的 par 是 phi 的其中一个 incoming，而这个 incoming
+的 par 是 phi。而这个 incoming 的 parent_diff 就是 phi 的 step。注意如果
+这个incoming 的 parent_factor 不是 1 那么这个 phi
+结点就不是归纳变量，需要使用一个不动点算法将不满足条件的归纳变量移除。
+计算完 phi 结点的 init 和 step 那其他依赖 phi
+结点的归纳变量就可以轻松计算出来了，对于一个归纳变量 x 计算公式为<br />
+<span class="math inline">\(init = x.\mathrm{parent\_diff} +
+x.par.\mathrm{init}\times x.\mathrm{parent\_factor}\)</span></p>
+<p><span class="math inline">\(step = x.\mathrm{parent\_factor}\times
+x.par.\mathrm{step}\)</span></p></li>
+<li><p>修改 IR 下面就是更新 IR 即可，见 代码中的
+<code>runOnFunction</code></p></li>
+<li><p>Next step</p>
+<ul>
+<li>这个 pass 是一个非常简单的强度削减的
+pass，它只能优化特殊情况，下面是可以做的工作
+<ul>
+<li><p>这个 pass 只兼容 int 类型，可以尝试将其拓展到浮点类型</p></li>
+<li><p>这个 pass
+归纳变量的初始值必须是常数，可以稍微修改一下让他支持初始值非常数。比如下列循环</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = x; i&lt;=y;i++)</span><br><span class="line">&#123;</span><br><span class="line">    sum += i*<span class="number">3</span><span class="number">-4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为归纳变量 <code>i</code> 的初始值不是常数，不会将 <code>i</code>
+加入到 <code>ind_tab</code>，导致 <code>i*3-4</code> 也不会加入到
+ind_tab，这就错失了一次优化时机。</p></li>
+<li><p>分析数组的 induction
+variable，可以让每次数组位置访问转变为一个指针的加减。</p></li>
+</ul></li>
+</ul></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/20/compiler/llvm-pass%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/04/20/compiler/llvm-pass%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">Pass入门（一）Pass 入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-20 10:00:00" itemprop="dateCreated datePublished" datetime="2023-04-20T10:00:00+08:00">2023-04-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/LLVM/" itemprop="url" rel="index"><span itemprop="name">LLVM</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h3 id="basic">Basic</h3>
+<p>想做一个有关llvm-pass的lab: 试试康奈尔 <a
+target="_blank" rel="noopener" href="https://www.cs.cornell.edu/courses/cs6120/2020fa/self-guided/">CS
+6120: The Self-Guided Course (cornell.edu)</a></p>
+<ul>
+<li><p>视频： <a
+target="_blank" rel="noopener" href="https://vod.video.cornell.edu/media/1_4nrtmvc9">CS 6120: Lesson 6:
+Writing an LLVM Pass - Video on Demand (cornell.edu)</a></p></li>
+<li><p>教程：<a
+target="_blank" rel="noopener" href="https://www.cs.cornell.edu/~asampson/blog/llvm.html">Adrian
+Sampson: LLVM for Grad Students (cornell.edu)</a></p></li>
+</ul>
+<ol start="0" type="1">
+<li><p>环境: Ubuntu + llvm 14 + clang 14</p></li>
+<li><p>clone lab repo :</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/sampsyo/llvm-pass-skeleton.git </span><br></pre></td></tr></table></figure></li>
+<li><p>进入这个repo，创建build文件夹，进入文件夹
+<code>LLVM_DIR=/usr/lib/llvm-14/cmake cmake ..</code>
+来生成makefile，注意LLVM_DIR
+取决于你LLVM的安装路径。然后make编译，他会编译出一个libSkeletonPass.so
+文件</p></li>
+<li><p>我们随便写一个main.c，然后使用下列命令行编译
+<code>clang -flegacy-pass-manager  -Xclang -load -Xclang ./libSkeletonPass.so main.c</code></p></li>
+<li><p>另一种方案</p>
+<ul>
+<li><p>使用clang将 main.c 编译为 llvm-ir
+<code>clang -emit-llvm -c main.c</code> 生成 main.bc</p></li>
+<li><p>修改Skeleton.cpp 为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// #include &lt;iostream&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;llvm/Pass.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;llvm/IR/Function.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;llvm/Support/raw_ostream.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;llvm/IR/LegacyPassManager.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;llvm/Transforms/IPO/PassManagerBuilder.h&quot;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> llvm;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">struct</span> <span class="title class_">SkeletonPass</span> : <span class="keyword">public</span> FunctionPass</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">char</span> ID;</span><br><span class="line">    <span class="built_in">SkeletonPass</span>() : <span class="built_in">FunctionPass</span>(ID) &#123;&#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">runOnFunction</span><span class="params">(Function &amp;F)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">      <span class="comment">// std::cout&lt;&lt;&quot;HELLO!&quot;;</span></span><br><span class="line">      <span class="built_in">errs</span>() &lt;&lt; <span class="string">&quot;I saw a function called &quot;</span> &lt;&lt; F.<span class="built_in">getName</span>() &lt;&lt; <span class="string">&quot;!\n&quot;</span>;</span><br><span class="line">      <span class="built_in">errs</span>() &lt;&lt; F;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> SkeletonPass::ID = <span class="number">0</span>;</span><br><span class="line"><span class="comment">// Register for opt</span></span><br><span class="line"><span class="function"><span class="type">static</span> RegisterPass&lt;SkeletonPass&gt; <span class="title">X</span><span class="params">(<span class="string">&quot;hello&quot;</span>, <span class="string">&quot;Hello World Pass&quot;</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Register for clang</span></span><br><span class="line"><span class="function"><span class="type">static</span> RegisterStandardPasses <span class="title">Y</span><span class="params">(PassManagerBuilder::EP_EarlyAsPossible,</span></span></span><br><span class="line"><span class="params"><span class="function">                                [](<span class="type">const</span> PassManagerBuilder &amp;Builder, legacy::PassManagerBase &amp;PM)</span></span></span><br><span class="line"><span class="params"><span class="function">                                &#123;</span></span></span><br><span class="line"><span class="params"><span class="function">                                  PM.add(<span class="keyword">new</span> SkeletonPass());</span></span></span><br><span class="line"><span class="params"><span class="function">                                &#125;)</span></span>;</span><br></pre></td></tr></table></figure>
+<p>make重新编译</p></li>
+<li><p>使用 opt 加载 pass 动态共享库
+<code>opt -load ./skeleton/libSkeletonPass.so -hello -enable-new-pm=0  main.bc</code></p></li>
+</ul></li>
+</ol>
+<h3 id="example-1-遍历ir">Example 1: 遍历IR</h3>
+<p>打印每条命令，每个BB。runOnFunction 返回值含义即函数是否被修改。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">runOnFunction</span><span class="params">(Function &amp;F)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> &amp;os = <span class="built_in">errs</span>();</span><br><span class="line">    os &lt;&lt;F.<span class="built_in">getName</span>()&lt;&lt;<span class="string">&quot;: Function body:\n&quot;</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;B : F)</span><br><span class="line">    &#123;</span><br><span class="line">        os &lt;&lt; <span class="string">&quot;Basic block:&quot;</span> &lt;&lt; B &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;I : B)</span><br><span class="line">        &#123;</span><br><span class="line">            os &lt;&lt; <span class="string">&quot;ins: &quot;</span> &lt;&lt; I &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="example-2-修改运算指令">Example 2: 修改运算指令</h3>
+<p>打印所有的运算指令</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">runOnFunction</span><span class="params">(Function &amp;F)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> &amp;os = <span class="built_in">errs</span>();</span><br><span class="line">    <span class="comment">// os &lt;&lt;F.getName()&lt;&lt;&quot;: Function body:\n&quot;;</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;B : F)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// os &lt;&lt; &quot;Basic block:&quot; &lt;&lt; B &lt;&lt; &quot;\n&quot;;</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;I : B)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">auto</span> *op = <span class="built_in">dyn_cast</span>&lt;BinaryOperator&gt;(&amp;I))</span><br><span class="line">                os &lt;&lt; *op &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>下面我们尝试将所有运算指令换成乘法指令</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">auto</span> &amp;I : B)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">auto</span> *op = <span class="built_in">dyn_cast</span>&lt;BinaryOperator&gt;(&amp;I))</span><br><span class="line">    &#123;</span><br><span class="line">        IRBuilder&lt;&gt; <span class="built_in">builder</span>(op);</span><br><span class="line"></span><br><span class="line">        Value *first = op-&gt;<span class="built_in">getOperand</span>(<span class="number">0</span>);</span><br><span class="line">        Value *second = op-&gt;<span class="built_in">getOperand</span>(<span class="number">1</span>);</span><br><span class="line">        Value *mul = builder.<span class="built_in">CreateMul</span>(first, second);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;U : op-&gt;<span class="built_in">uses</span>())</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> *usr = U.<span class="built_in">getUser</span>();</span><br><span class="line">            usr-&gt;<span class="built_in">setOperand</span>(U.<span class="built_in">getOperandNo</span>(), mul);</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>; <span class="comment">// 返回true 表面该函数被修改</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还是比较清晰的。</p>
+<h3 id="example-3-插入函数">Example 3: 插入函数</h3>
+<p>注意者不仅仅需要main.c 还需要编写logop 的实现并和main.c 链接。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">virtual</span> <span class="type">bool</span> <span class="title">runOnFunction</span><span class="params">(Function &amp;F)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    LLVMContext &amp;cxt = F.<span class="built_in">getContext</span>();</span><br><span class="line">    <span class="keyword">auto</span> logFunc = F.<span class="built_in">getParent</span>()-&gt;<span class="built_in">getOrInsertFunction</span>(</span><br><span class="line">        <span class="string">&quot;logop&quot;</span>, Type::<span class="built_in">getVoidTy</span>(cxt), Type::<span class="built_in">getInt32Ty</span>(cxt));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">auto</span> &amp;os = <span class="built_in">errs</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;B : F)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> &amp;I : B)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">auto</span> *op = <span class="built_in">dyn_cast</span>&lt;BinaryOperator&gt;(&amp;I))</span><br><span class="line">            &#123;</span><br><span class="line">                IRBuilder&lt;&gt; <span class="built_in">builder</span>(op);</span><br><span class="line">                builder.<span class="built_in">SetInsertPoint</span>(&amp;B, ++builder.<span class="built_in">GetInsertPoint</span>());</span><br><span class="line">                Value *args = &#123;op&#125;;</span><br><span class="line">                builder.<span class="built_in">CreateCall</span>(logFunc, args);</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="references">References:</h3>
+<ol type="1">
+<li>LLVM 后端 : <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/351848328">LLVM
+后端实践笔记 0：序 - 知乎 (zhihu.com)</a></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/26/Linux%E5%BC%80%E5%8F%91/nginx%E9%85%8D%E7%BD%AE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/26/Linux%E5%BC%80%E5%8F%91/nginx%E9%85%8D%E7%BD%AE/" class="post-title-link" itemprop="url">nginx基本配置</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-26 19:00:00" itemprop="dateCreated datePublished" datetime="2023-02-26T19:00:00+08:00">2023-02-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">Linux开发</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="nginx-基本配置">Nginx 基本配置</h2>
+<p>nginx 官方文档地址 <a target="_blank" rel="noopener" href="https://nginx.org/en/docs/">docs</a></p>
+<ol type="1">
+<li>安装nginx <code>sudo apt install nginx</code></li>
+<li>修改nginx 配置文件,使用 nginx -t 可以查看配置文件的位置</li>
+<li>基本指令 nginx 一旦启动，就可以使用
+<code>nginx -s stop|quit|reload|reopen</code>来控制nginx</li>
+</ol>
+<h3 id="配置静态的资源服务器">配置静态的资源服务器</h3>
+<p>修改nginx 的配置文件，添加一个静态资源服务器的内容如下 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">http&#123;</span><br><span class="line">    server&#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+使用location 去限定静态资源的路径 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">location&#123;</span><br><span class="line">    root /data/www;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 可以重定向路由例如
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;    </span><br><span class="line">    location / &#123;</span><br><span class="line">        root /data/www;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location /images/ &#123;</span><br><span class="line">        root /data;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/02/26/Linux%E5%BC%80%E5%8F%91/%E9%93%BE%E6%8E%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/02/26/Linux%E5%BC%80%E5%8F%91/%E9%93%BE%E6%8E%A5/" class="post-title-link" itemprop="url">链接技术</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-02-26 12:34:08" itemprop="dateCreated datePublished" datetime="2023-02-26T12:34:08+08:00">2023-02-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux%E5%BC%80%E5%8F%91/" itemprop="url" rel="index"><span itemprop="name">Linux开发</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux%E5%BC%80%E5%8F%91/%E5%9F%BA%E7%A1%80/" itemprop="url" rel="index"><span itemprop="name">基础</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="basic">Basic</h2>
+<ul>
+<li><p>链接（linking）是将各种代码和数据片段收集并组合成为一个单一文件的过程。</p></li>
+<li><p>链接器必须完成的两个任务</p>
+<ul>
+<li>符号解析(symbol
+resolution)：目标文件定义和引用符号，每个符号对应于一个函数、一个全局变量或一个静态变量。符号解析的目的是将每个符号的引用和正好和<strong>一个</strong>符号定义关联起来。</li>
+<li>重定位(relocation):
+编译器和汇编器生成从地址0开始的代码和数据节。链接器通过把每个符号定义与一个内存位置关联起来，从而重定位这些节，然后修改所有对这些符号的引用，使得它们指向这个内存位置。链接器使用汇编器产生的重定位条目的详细指令，不加甄别地执行这样的重定位。</li>
+</ul></li>
+<li><p>目标文件有三种形式</p>
+<ul>
+<li>可重定位目标文件：包含二进制代码和数据，其形式可以在编译时与其他可重定位目标文件合并起来，创建一个可执行目标文件</li>
+<li>可执行目标文件</li>
+<li>共享目标文件：一种特殊类型的可重定位目标文件，可以在加载或者运行时被动态地加载进内存并拼接。</li>
+</ul></li>
+</ul>
+<h3 id="tools">Tools</h3>
+<ul>
+<li><p>对于一段程序我们只编译可以使用<code>gcc -c filename</code>命令。</p></li>
+<li><p>readelf : 一款可以读取elf头的实用工具，一般 linux
+装了gcc的都自带。</p>
+<ul>
+<li>实用方法：readelf [-option] [filename]</li>
+<li>-h 查看各个节的基本信息</li>
+<li>-s 查看符号表</li>
+</ul></li>
+</ul>
+<h2 id="可重定位目标文件">可重定位目标文件</h2>
+<p>ELF头以一个16字节的序列开始，这个序列描述了生成该文件的系统的字大小和字节顺序。</p>
+<p>夹在ELF头和节头部表之间的都是节。一个典型的ELF可重定位目标文件包含以下几个节。</p>
+<ul>
+<li><p>.text :已编译好的机器代码</p></li>
+<li><p>.rodata: 只读数据</p></li>
+<li><p>.data :已经初始化的全局和静态C变量。</p></li>
+<li><p>.bss:
+未初始化的全局和静态C变量，以及所有被初始化为0的全局或静态变量。在目标文件中这个节不占用实际的空间，它仅仅是个占位符。</p></li>
+<li><p>.symtab:一个符号表，他存放在程序定义和引用的函数和全局变量信息。</p></li>
+<li><p>.rel.text:
+一个.text节中位置的列表，当链接器把这个目标文件和其他文件组合时，需要修改这些位置。</p></li>
+<li><p>.rel.data: 被模块引用或定义的所有全局变量的重定位信息</p></li>
+<li><p>.debug :</p></li>
+<li><p>.line:</p></li>
+<li><p>.strtab:一个字符串表，其内容包括.symtab和.debug节中的符号表，以及节头部中的名字，字符串表就是以null结尾的字符串序列。</p></li>
+</ul>
+<h2 id="符号解析">符号解析</h2>
+<h3 id="解析多重定义的全局符号">解析多重定义的全局符号</h3>
+<ul>
+<li>强符号：函数和已经初始化的全局变量</li>
+<li>弱符号：未初始化的全局变量</li>
+</ul>
+<p>Linux链接器使用下面的规则来处理多重定义的符号名</p>
+<ol type="1">
+<li>不允许有多个同名强符号</li>
+<li>如果有一个强符号和多个弱符号同名，那么选择强符号</li>
+<li>如果有多个弱符号同名，那么从这些弱符号中任意选择一个</li>
+</ol>
+<h3 id="静态库链接">静态库链接</h3>
+<p>在Linux中，静态库以一种称为存档的特殊文件格式存放在磁盘中。存档文件是一组连接起来的可重定位目标文件的集合，有一个头部用来描述每个成员的目标文件的大小和位置。存档文件名由后缀.a标识</p>
+<p>要创建静态库，我们要使用ar工具</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">gcc -c [file lists]</span><br><span class="line">ar rcs [libname.a] [.o lists]</span><br></pre></td></tr></table></figure>
+<h2 id="动态链接共享库">动态链接共享库</h2>
+<p>共享库(shared
+library)是致力于解决静态库缺陷的一个现代创新船坞。共享库是一个目标模块，在运行或加载时，可以加载到任意内容的内存地址，并和一个在内存中的程序链接起来。这个过程称为动态链接（dynamic
+linking)，是由一个叫动态链接器的程序来执行的。共享库也称共享目标（shared
+object），在Linux系统中通常用.so
+后缀来表示。微软的操作系统大量使用了共享库，他们称为dll。</p>
+<p>共享库是以两种不同的方式来“共享”的。首先，在任何给定的文件系统中，对于一个库只有一个.so文件。所有引用该库的可执行目标文件共享这个.so文件中的代码和数据，而不是像静态库的内容那样被复制和嵌入到引用他们的可执行的文件中。其次在内存中，一个共享库.text节的一个副本可以被不同的正在运行的进程共享。</p>
+<p>共享库生成命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -shared -fpic -o [libname.so] [<span class="built_in">source</span> code list]</span><br></pre></td></tr></table></figure>
+<p>-fpic选项指示编译器生成与位置无关的代码。-shared选项指示链接器创建一个共享的目标文件。一旦创建了这个库，随后就可以把它连接到其他程序。(比如我们有一个main.c
+和一个创建好的共享库mylib.so)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o prog main.c ./mylib.so</span><br></pre></td></tr></table></figure>
+<h3 id="从应用程序中加载和链接共享库">从应用程序中加载和链接共享库</h3>
+<p>我们可以在程序运行时加载和链接共享库</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dlfcn.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">void</span> *<span class="title">dlopen</span><span class="params">(<span class="type">const</span> <span class="type">char</span>* filename,<span class="type">int</span> flag)</span></span>; <span class="comment">// NULL 出错，否则返回句柄</span></span><br></pre></td></tr></table></figure>
+<p>flag可以取</p>
+<ul>
+<li><p>RTLD_NOW，告诉链接器立即解析对外部符号的引用</p></li>
+<li><p>RTLD_LASY，告诉链接器推迟符号解析，直到执行来自库中代码。</p></li>
+<li><p>与以上两个相容的选项：RTLD_GLOBAL：如果当前可执行文件是带-rdynamic选项编译的，那么对于符号解析而言，他的全局符号也是可用的。</p></li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> *<span class="title">dlsym</span><span class="params">(<span class="type">void</span> *handle,<span class="type">char</span> *symbol)</span></span>; <span class="comment">// 返回：成功返回符号指针，出错返回NULL</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">dlclose</span><span class="params">(<span class="type">void</span> *handle)</span></span>; <span class="comment">//返回：若成功则为0，出错-1，如果没有其他共享库还在使用这个共享库，dlclose函数就会卸载该共享库。</span></span><br><span class="line"><span class="function"><span class="type">const</span> <span class="type">char</span>* <span class="title">dlerror</span><span class="params">(<span class="type">void</span>)</span></span>; <span class="comment">// 返回如果前面对dlopen,dlsysm,dlclose 的调用失败，则为错误信息，成功则为NULL。</span></span><br></pre></td></tr></table></figure>
+<p>如果我们使用到这些接口，我们需要在编译选项中加入
+<code>-ldl</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gcc -o prog main.c -ldl</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;dlfcn.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="built_in">int</span> (*mul_array)(<span class="type">int</span> *, <span class="type">int</span>);</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">void</span> *handle = <span class="built_in">dlopen</span>(<span class="string">&quot;./mylib.so&quot;</span>, RTLD_LAZY);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (handle == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;open shared object failed: %s\n&quot;</span>, <span class="built_in">dlerror</span>());</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    mul_array = <span class="built_in">dlsym</span>(handle, <span class="string">&quot;mul_array&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (mul_array == <span class="literal">NULL</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;open shared object symbol failed: %s\n&quot;</span>, <span class="built_in">dlerror</span>());</span><br><span class="line">        <span class="built_in">exit</span>(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="type">int</span> arr[] = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, <span class="built_in">mul_array</span>(arr, <span class="number">4</span>));</span><br><span class="line">    </span><br><span class="line">    <span class="built_in">dlclose</span>(handle);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="位置无关代码">位置无关代码</h3>
+<p>可以加载而无需重定位的代码称为位置无关代码（Position-Independent
+Code, PIC)。用户对gcc使用-fpic
+只是GNU编译器生成pic代码。共享库的编译总是使用该选项。</p>
+<ol type="1">
+<li><p>PIC的引用</p>
+<p>编译器通过运用一下有趣的事实来生成对全局变量的PIC引用：无论我们内存中的何处加载一个目标模块（包括共享目标模块），数据段与代码段的距离总是保持不变。</p>
+<p>想要生成对全局变量PIC引用的编译器利用了这个事实，他在数据段开始的地方创建了一个表，叫做全局偏移量表（Global
+Offset
+Table,GOT)。在GOT中，每个被这个目标模块引用的全局数据目标（过程或全局变量）都有一个8字节的条目。在加载时，动态链接器会重定位GOT中的每个条目，使得它包含目标的正确绝对地址。每个引用全局目标的目标模块都有自己的GOT。</p></li>
+<li><p>PIC函数的调用</p>
+<p>假设程序调用一个由共享库定义的函数。编译器没有办法预测这个函数的运行时地址，因为定义它的共享模块在运行时可以家加载到任意位置。GNU编译系统使用了一种很有趣的技术来解决这个问题，称为延时绑定(lazy
+binding)，将过程地址的绑定推迟到第一次调用该过程时。</p>
+<p>延时绑定是通过两个数据结构之间简洁但又有些复杂的交互来实现的，这两个数据结构是：GOT和过程链接表(PLT)，GOT在数据段（可以修改），PLT在代码段（不可以修改）。</p>
+<ul>
+<li>PLT：PLT是一个数组，其中每个条目是16个字节，PLT[0]是一个特殊的条目，它跳转到动态链接器中。每个被可执行程序调用的库函数都有它自己的PLT条目。每个条目都负责调用一个具体的函数。PLT[1]调用系统启动函数，它初始化执行环境，调用main函数并处理其返回值。从PLT[2]开始的条目调用用户代码调用的函数。</li>
+<li>GOT:GOT是一个数组，其中每个条目是8个字节地址。和PLT联合使用，GOT[0]和GOT[1]包含动态链接器在解析函数地址时会使用的信息。GOT[2]时动态链接器在ld-linux.so
+模块中的入口点。其余的每个条目对应于一个被调用的函数，其地址需要在运行时被解析。每个条目都有一个相匹配的PLT条目。<strong>初始时，每个GOT条目都对应PLT条目的第二个指令</strong></li>
+</ul></li>
+</ol>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/02/ICPC/%E8%8E%AB%E9%98%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/02/ICPC/%E8%8E%AB%E9%98%9F/" class="post-title-link" itemprop="url">莫队</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-02 12:34:08" itemprop="dateCreated datePublished" datetime="2022-05-02T12:34:08+08:00">2022-05-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" itemprop="url" rel="index"><span itemprop="name">数据结构</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="莫队">莫队</h2>
+<h3 id="概述">概述</h3>
+<p>莫队算法主要是用于离线解决通常不带修改只有查询的一类区间问题。如果从<span
+class="math inline">\([l,r]\)</span>的答案能够<span
+class="math inline">\(O(1)\)</span>拓展到<span
+class="math inline">\([l-1,r],[l+1,r],[l,r+1],[l,r-1]\)</span>（即与<span
+class="math inline">\([l,r]\)</span>相邻的区间）的答案，那么就可以<span
+class="math inline">\(O(n\sqrt
+n)\)</span>的复杂度内求出所有询问的答案。</p>
+<h3 id="实现">实现</h3>
+<p>离线后排序，顺序处理每个询问<span
+class="math inline">\([l,r]\)</span>，暴力从上一个区间转移到下一个区间答案（一步一步移动即可）。但是我们这样朴素写可能被卡掉，因为他可能类似于
+<span class="math inline">\((1,1),(2,10000),(3,1),(4,10000)\)</span></p>
+<p>那怎么办呢，我们根据<span
+class="math inline">\(l\)</span>分块！如果块号一样我们按<span
+class="math inline">\(r\)</span>排序，否则我们就比较<span
+class="math inline">\(l\)</span>，这样保证每个块的<span
+class="math inline">\(r\)</span>最多移动<span
+class="math inline">\(N\)</span>，同样的我们同一个块中相邻的两个询问<span
+class="math inline">\(l\)</span>最多移动<span
+class="math inline">\(\sqrt N\)</span>。这样综合起来时间复杂度就是<span
+class="math inline">\(O(N\sqrt N)\)</span>啦。</p>
+<p>下面我们看一道ABC莫队板子题</p>
+<h3 id="abc242grange-pairing-query"><a
+target="_blank" rel="noopener" href="http://oj.merdog.cn/#/submit?id=ABC242G&amp;where=topic">ABC242G:Range
+Pairing Query</a></h3>
+<p>给你<span class="math inline">\(N(1\le N \le
+10^5)\)</span>个数，每个数<span
+class="math inline">\(A_i\)</span>大小从<span
+class="math inline">\([1,N]\)</span>，给定很多询问，你需要计算</p>
+<p><span class="math display">\[\sum\limits_{c_i}{\lfloor
+c_i/2\rfloor}\]</span></p>
+<p>其中<span
+class="math inline">\(c_i\)</span>是这个区间某个数出现的次数，注意这个maxn一定要取<span
+class="math inline">\(\max{(N,Q)}\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;array&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 每个块sqrt N</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> N;</span><br><span class="line"><span class="type">int</span> A[maxn];</span><br><span class="line"><span class="type">int</span> cnt[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> MD</span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> ANS[maxn];</span><br><span class="line">    <span class="type">int</span> cur_ans;</span><br><span class="line">    <span class="type">int</span> len;</span><br><span class="line">    <span class="function"><span class="type">bool</span> <span class="title">cmp</span><span class="params">(array&lt;<span class="type">int</span>, <span class="number">3</span>&gt; a1, array&lt;<span class="type">int</span>, <span class="number">3</span>&gt; a2)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">auto</span> [l, r, id] = a1;</span><br><span class="line">        <span class="keyword">auto</span> [l2, r2, id2] = a2;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (l / len != l2 / len)</span><br><span class="line">            <span class="keyword">return</span> l &lt; l2;</span><br><span class="line">        <span class="keyword">return</span> r &lt; r2;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">inc</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cur_ans -= cnt[A[x]] / <span class="number">2</span>;</span><br><span class="line">        cnt[A[x]]++;</span><br><span class="line">        cur_ans += cnt[A[x]] / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">dec</span><span class="params">(<span class="type">int</span> x)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        cur_ans -= cnt[A[x]] / <span class="number">2</span>;</span><br><span class="line">        cnt[A[x]]--;</span><br><span class="line">        cur_ans += cnt[A[x]] / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">(vector&lt;array&lt;<span class="type">int</span>, <span class="number">3</span>&gt;&gt; &amp;qs, <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        len = <span class="built_in">sqrt</span>(n);</span><br><span class="line">        <span class="type">int</span> L = <span class="number">1</span>, R = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">sort</span>(qs.<span class="built_in">begin</span>(), qs.<span class="built_in">end</span>(), cmp);</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; qs.<span class="built_in">size</span>(); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">auto</span> [l, r, id] = qs[i];</span><br><span class="line">            <span class="keyword">while</span> (L &gt; l) <span class="built_in">inc</span>(--L);</span><br><span class="line">            <span class="keyword">while</span> (L &lt; l) <span class="built_in">dec</span>(L++);</span><br><span class="line">            <span class="keyword">while</span> (R &lt; r) <span class="built_in">inc</span>(++R);</span><br><span class="line">            <span class="keyword">while</span> (R &gt; r) <span class="built_in">dec</span>(R--);</span><br><span class="line">            ANS[id] = cur_ans;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::<span class="built_in">sync_with_stdio</span>(<span class="literal">false</span>);</span><br><span class="line">    cin.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line">    cout.<span class="built_in">tie</span>(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">    cin &gt;&gt; N;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= N; i++)</span><br><span class="line">        cin &gt;&gt; A[i];</span><br><span class="line">    <span class="type">int</span> Q;</span><br><span class="line">    cin &gt;&gt; Q;</span><br><span class="line">    vector&lt;array&lt;<span class="type">int</span>, 3&gt;&gt; qs;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= Q; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> l, r;</span><br><span class="line">        cin &gt;&gt; l &gt;&gt; r;</span><br><span class="line">        qs.<span class="built_in">push_back</span>(&#123;l, r, i&#125;);</span><br><span class="line">    &#125;</span><br><span class="line">    MD::<span class="built_in">solve</span>(qs, N);</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= Q; i++)</span><br><span class="line">        cout &lt;&lt; MD::ANS[i] &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/01/ICPC/%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/01/ICPC/%E6%95%B0%E8%AE%BA%E5%85%A5%E9%97%A8/" class="post-title-link" itemprop="url">数论入门</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-01 12:34:08" itemprop="dateCreated datePublished" datetime="2022-05-01T12:34:08+08:00">2022-05-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/" itemprop="url" rel="index"><span itemprop="name">算法</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AE%97%E6%B3%95/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>[toc]</p>
+<h2 id="数论分块">数论分块</h2>
+<p>对于 <span class="math display">\[
+\sum\limits_{i=1}^n\lfloor\frac{n}{i}\rfloor
+\]</span></p>
+<p>的式子我们使用整除分块来快速计算<span class="math inline">\(O(\sqrt
+n)\)</span></p>
+<p>我们发现累加的值成块状分布，设块的左端点为<span
+class="math inline">\(l\)</span>，打表得出结论右端点为<span
+class="math inline">\(r=\lfloor\frac{n}{\lfloor\frac{n}{l}\rfloor}\rfloor\)</span></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">1</span>, r = <span class="number">0</span>; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        r = (n / (n / l));</span><br><span class="line">        sum += (r - l + <span class="number">1</span>) * (n / l);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="余数之和">余数之和</h3>
+<p>给定正整数<span class="math inline">\(n\)</span>和<span
+class="math inline">\(k\)</span>，请计算 <span class="math display">\[
+G(n,k)=\sum\limits_{i=1}^n{k\;mod\;i}
+\]</span> 推导: <span class="math display">\[
+k\; mod\;i=k-\lfloor\frac{k}{i}\rfloor\cdot i
+\]</span> 然后用整除分块就行</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="type">const</span> <span class="type">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="meta">#<span class="keyword">define</span> int long long</span></span><br><span class="line"><span class="function"><span class="type">signed</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> n, k;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="type">int</span> sum = n * k;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> l = <span class="number">1</span>, r = <span class="number">0</span>; l &lt;= n; l = r + <span class="number">1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (k / l == <span class="number">0</span>)</span><br><span class="line">            r = n;</span><br><span class="line">        <span class="keyword">else</span> </span><br><span class="line">            r = k / (k / l);</span><br><span class="line">        <span class="keyword">if</span> (r &gt; n)</span><br><span class="line">            r = n;</span><br><span class="line">        <span class="type">int</span> base = k / l;</span><br><span class="line">        sum -= (base * l + base * r) * (r - l + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; sum &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/04/19/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E9%BA%A6%E5%85%8B%E5%8A%B3%E6%9E%97%E5%B1%95%E5%BC%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/04/19/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/%E9%BA%A6%E5%85%8B%E5%8A%B3%E6%9E%97%E5%B1%95%E5%BC%80/" class="post-title-link" itemprop="url">麦克劳林展开</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-04-19 09:28:18" itemprop="dateCreated datePublished" datetime="2022-04-19T09:28:18+08:00">2022-04-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">高等数学</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="常用函数麦克劳林展开">常用函数麦克劳林展开</h2>
+<p><span class="math inline">\(\displaystyle\sin x =
+x-\frac{1}{3!}x^3+\frac{1}{5!}x^5+o(x^5)\)</span></p>
+<p><span class="math inline">\(\displaystyle\cos
+x=1-\frac{1}{2}x^2+\frac{1}{4!}x^4+o(x^4)\)</span></p>
+<p><span class="math inline">\(\displaystyle\tan
+x=x+\frac{1}{3}x^3+\frac{2}{15}x^5+o(x^5)\)</span></p>
+<p><span class="math inline">\(\displaystyle\arcsin
+x=x+\frac{1}{6}x^3+o(x^3)\)</span></p>
+<p><span class="math inline">\(\displaystyle\arctan
+x=x-\frac{1}{3}x^3+o(x^3)\)</span></p>
+<p><span
+class="math inline">\(\displaystyle\ln(1+x)=x-\frac{1}{2}x^2+\frac{1}{3}x^3+o(x^2)\)</span></p>
+<p><span class="math inline">\(\displaystyle
+e^x=1+x+\frac{1}{2}x^2+o(x^2)\)</span></p>
+<p><span class="math inline">\(\displaystyle
+(1+x)^a=1+ax+\frac{a(a-1)}{2}x^2+o(x^2)\)</span></p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/default-index/page/2/">2</a><a class="page-number" href="/default-index/page/3/">3</a><a class="extend next" rel="next" href="/default-index/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Htto"
+      src="/images/a1.jpg">
+  <p class="site-author-name" itemprop="name">Htto</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <div >
+  <a href="https://github.com/HttoHu" rel="noopener" target="_blank">Github</a>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <script type="text/javascript" src="/js/category.js"></script>
+</body>
+</html>

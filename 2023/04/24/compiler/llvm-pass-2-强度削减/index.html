@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<!-- 导入jquery -->
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.5.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Github 循环往往耗时比较高，如果我们能将循环中的一些指令替换为代价较低的指令那么收益会很大。比如下面一个例子。 123456789int main()&amp;#123;    int sum &#x3D; 0;    for(int i&#x3D;0;i&lt;100;i++)    &amp;#123;        int j&#x3D;i*3-2;        sum+&#x3D;j;    &amp;#125;    &#x2F;&#x2F; ...&amp;#12">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pass入门（二）强度削减">
+<meta property="og:url" content="http://example.com/2023/04/24/compiler/llvm-pass-2-%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%87%8F/index.html">
+<meta property="og:site_name" content="Htto的小站">
+<meta property="og:description" content="Github 循环往往耗时比较高，如果我们能将循环中的一些指令替换为代价较低的指令那么收益会很大。比如下面一个例子。 123456789int main()&amp;#123;    int sum &#x3D; 0;    for(int i&#x3D;0;i&lt;100;i++)    &amp;#123;        int j&#x3D;i*3-2;        sum+&#x3D;j;    &amp;#125;    &#x2F;&#x2F; ...&amp;#12">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-24T02:00:00.000Z">
+<meta property="article:modified_time" content="2024-06-15T05:55:05.503Z">
+<meta property="article:author" content="Htto">
+<meta property="article:tag" content="编译器">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/04/24/compiler/llvm-pass-2-%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%87%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Pass入门（二）强度削减 | Htto的小站</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Htto的小站</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/04/24/compiler/llvm-pass-2-%E5%BC%BA%E5%BA%A6%E5%89%8A%E5%87%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/a1.jpg">
+      <meta itemprop="name" content="Htto">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Htto的小站">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Pass入门（二）强度削减
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-04-24 10:00:00" itemprop="dateCreated datePublished" datetime="2023-04-24T10:00:00+08:00">2023-04-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-06-15 13:55:05" itemprop="dateModified" datetime="2024-06-15T13:55:05+08:00">2024-06-15</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/" itemprop="url" rel="index"><span itemprop="name">编译</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%BC%96%E8%AF%91/LLVM/" itemprop="url" rel="index"><span itemprop="name">LLVM</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><a
+target="_blank" rel="noopener" href="https://github.com/huyuantao-ultrarisc/strength-reduction">Github</a></p>
+<p>循环往往耗时比较高，如果我们能将循环中的一些指令替换为代价较低的指令那么收益会很大。比如下面一个例子。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="type">int</span> j=i*<span class="number">3</span><span class="number">-2</span>;</span><br><span class="line">        sum+=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这个例子中计算 <span class="math inline">\(j\)</span>
+用到了一个减法指令和一个乘法指令。乘法指令往往代价较高，其实我们不难发现，因为每次循环
+<span class="math inline">\(i\)</span> 总是加1，<span
+class="math inline">\(j\)</span> 的值每轮循环都会加 <span
+class="math inline">\(3\)</span>，我们其实可以将其替换为。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> j=<span class="number">-2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        sum+=j;</span><br><span class="line">        j+=<span class="number">3</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样一个乘法加上一个减法指令就被替换为了加法指令理论上性能就可以得到不错的提升。</p>
+<p>为了实现上述优化，首先我们需要找到该循环的归纳变量(induction
+variable)，即存在一个正的或负的常数 <span
+class="math inline">\(c\)</span> 使得每次 <span
+class="math inline">\(x\)</span> 赋值时他的值总是增加 <span
+class="math inline">\(c\)</span>，那么 <span
+class="math inline">\(x\)</span> 就称为“归纳变量(induction
+variable)”。本例中 <span class="math inline">\(i\)</span>
+是一个很明显的归纳变量，<span class="math inline">\(j\)</span>
+也是归纳变量。</p>
+<p>为了实现这个优化，首先我们先使用 mem2reg 将部分 load 和 store 替换为
+phi 指令。使用如下命令编译（llvm-14）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clang -emit-llvm -S -Xclang -disable-O0-optnone -fno-discard-value-names main.c -o main.ll</span><br><span class="line">opt -S --mem2reg main.ll -o main.ll</span><br></pre></td></tr></table></figure>
+<p>得到的 llvm ir为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">define dso_local i32 @main() #0 &#123;</span><br><span class="line">entry:</span><br><span class="line">  br label %for.cond</span><br><span class="line"></span><br><span class="line">for.cond:                                         ; preds = %for.inc, %entry</span><br><span class="line">  %sum.0 = phi i32 [ 0, %entry ], [ %add, %for.inc ]</span><br><span class="line">  %i.0 = phi i32 [ 0, %entry ], [ %inc, %for.inc ]</span><br><span class="line">  %cmp = icmp slt i32 %i.0, 100</span><br><span class="line">  br i1 %cmp, label %for.body, label %for.end</span><br><span class="line"></span><br><span class="line">for.body:                                         ; preds = %for.cond</span><br><span class="line">  %mul = mul nsw i32 %i.0, 3</span><br><span class="line">  %sub = sub nsw i32 %mul, 2</span><br><span class="line">  %add = add nsw i32 %sum.0, %sub</span><br><span class="line">  br label %for.inc</span><br><span class="line"></span><br><span class="line">for.inc:                                          ; preds = %for.body</span><br><span class="line">  %inc = add nsw i32 %i.0, 1</span><br><span class="line">  br label %for.cond, !llvm.loop !6</span><br><span class="line"></span><br><span class="line">for.end:                                          ; preds = %for.cond</span><br><span class="line">  ret i32 0</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后我们专心编写我们的 pass 。</p>
+<h2 id="implementation">Implementation</h2>
+<h3 id="algorithm">Algorithm</h3>
+<ol type="1">
+<li><p>计算所有 induction variable （见 skeleton.cpp 下
+<code>void getIndVarTab(Loop *loop)</code>） 对于每个induction variable
+我们有以下属性</p>
+<p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">struct</span> <span class="title class_">InductionInfo</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 依赖的 祖先（注意不一定是直接parent，而是追溯到最上面的parent）</span></span><br><span class="line">    Value *par = <span class="literal">nullptr</span>;</span><br><span class="line">    <span class="comment">// 要转变后的induction variable每步增量</span></span><br><span class="line">    optional&lt;<span class="type">int</span>&gt; step;</span><br><span class="line">    <span class="comment">// induction variable 初始值</span></span><br><span class="line">    optional&lt;<span class="type">int</span>&gt; init;</span><br><span class="line">    <span class="comment">// 是否是Phi node</span></span><br><span class="line">    <span class="type">bool</span> is_phi = <span class="literal">false</span>;</span><br><span class="line">    <span class="comment">// 相对 par 的</span></span><br><span class="line">    <span class="type">int</span> parent_factor = <span class="number">1</span>;</span><br><span class="line">    <span class="comment">// 相对 par 的位移</span></span><br><span class="line">    <span class="type">int</span> parent_dif = <span class="number">0</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>每个induction varaible 都有一个par属性，它代表依赖的induction
+variable，如果是phi结点，那么依赖的induction variable 就会是 phi
+节点的某个非常数的 incoming 部分。我们的目的是计算出 step和
+init，然后就可以在循环的header 插入每个induction variable 的 phi
+结点，然后再在循环body的尾变添加step 指令。比如 (伪IR) 我们分析出</p>
+<p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">loop_header:</span><br><span class="line">  tmp = phi [INIT,entry] [tmp2,body]</span><br><span class="line">  ...</span><br><span class="line">body:</span><br><span class="line">  tmp2 = tmp + STEP</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure></p>
+<p>起初 loop_header 中出现的 phi 结点都加入到 ind_tab
+中作为可疑的induction variable。然后遍历整个循环的所有指令，如果一个
+BinaryOperator 满足以下条件我们就将它加入到ind_tab 来作为可疑的induction
+variable</p>
+<ul>
+<li>其中一个操作数是常数，另一个操作数是 induction
+variable（称其为依赖的归纳变量）。</li>
+<li>操作符为 +, - , *</li>
+</ul>
+<p>遇到这样的 BinaryOperator
+我们首先将依赖归纳变量的par作为自己的par（如果依赖的的归纳变量是phi结点，那么我们直接将这个
+phi 结点作为自己的par），并且计算相对这个 par
+的乘积和偏移。（减法需要注意依赖的归纳变量的位置，如果归纳变量在右边例如
+<code>j=5-i</code> 我们要看作 <code>j = -1*i + 5</code> 。j 的属性
+parent_diff 和parent_factor 与 i 相比较先取相反数然后 parent_diff
+再加上5，详见代码实现）</p>
+<p>如果这条指令没有加入到 ind_tab 中，我们需要将其加入到 rm_values
+中，计算完 ind_tab 后我们需要检查是否有归纳变量依赖 rm_values
+中的值，如果依赖我们将其从 ind_tab
+中删除。这样我们跑一个不动点算法将所有不符合条件的归纳变量删除。</p></li>
+<li><p>计算 init 和 step 找到所有的潜在归纳变量且计算了它相对 par
+的倍数和 diff，我们就可以计算 它的 init 和 step 了，phi 结点的 init
+我们都计算出来了，他已经再 phi 中显示声明了。phi 的 step
+我们却还没有计算，phi 的 par 是 phi 的其中一个 incoming，而这个 incoming
+的 par 是 phi。而这个 incoming 的 parent_diff 就是 phi 的 step。注意如果
+这个incoming 的 parent_factor 不是 1 那么这个 phi
+结点就不是归纳变量，需要使用一个不动点算法将不满足条件的归纳变量移除。
+计算完 phi 结点的 init 和 step 那其他依赖 phi
+结点的归纳变量就可以轻松计算出来了，对于一个归纳变量 x 计算公式为<br />
+<span class="math inline">\(init = x.\mathrm{parent\_diff} +
+x.par.\mathrm{init}\times x.\mathrm{parent\_factor}\)</span></p>
+<p><span class="math inline">\(step = x.\mathrm{parent\_factor}\times
+x.par.\mathrm{step}\)</span></p></li>
+<li><p>修改 IR 下面就是更新 IR 即可，见 代码中的
+<code>runOnFunction</code></p></li>
+<li><p>Next step</p>
+<ul>
+<li>这个 pass 是一个非常简单的强度削减的
+pass，它只能优化特殊情况，下面是可以做的工作
+<ul>
+<li><p>这个 pass 只兼容 int 类型，可以尝试将其拓展到浮点类型</p></li>
+<li><p>这个 pass
+归纳变量的初始值必须是常数，可以稍微修改一下让他支持初始值非常数。比如下列循环</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="type">int</span> i = x; i&lt;=y;i++)</span><br><span class="line">&#123;</span><br><span class="line">    sum += i*<span class="number">3</span><span class="number">-4</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为归纳变量 <code>i</code> 的初始值不是常数，不会将 <code>i</code>
+加入到 <code>ind_tab</code>，导致 <code>i*3-4</code> 也不会加入到
+ind_tab，这就错失了一次优化时机。</p></li>
+<li><p>分析数组的 induction
+variable，可以让每次数组位置访问转变为一个指针的加减。</p></li>
+</ul></li>
+</ul></li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E8%AF%91%E5%99%A8/" rel="tag"># 编译器</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/04/20/compiler/llvm-pass%E5%85%A5%E9%97%A8/" rel="prev" title="Pass入门（一）Pass 入门">
+      <i class="fa fa-chevron-left"></i> Pass入门（一）Pass 入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/04/24/compiler/llvm-pass-0-%E7%9B%AE%E5%BD%95/" rel="next" title="Pass入门目录">
+      Pass入门目录 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#implementation"><span class="nav-number">1.</span> <span class="nav-text">Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#algorithm"><span class="nav-number">1.1.</span> <span class="nav-text">Algorithm</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Htto"
+      src="/images/a1.jpg">
+  <p class="site-author-name" itemprop="name">Htto</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        <div >
+  <a href="https://github.com/HttoHu" rel="noopener" target="_blank">Github</a>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+  <script type="text/javascript" src="/js/category.js"></script>
+</body>
+</html>
